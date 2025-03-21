@@ -1,0 +1,15 @@
+[package]
+name = "orm_example"
+version = "0.1.0"
+edition = "2021"
+
+[workspace]
+members = [".", "migration"]
+
+[dependencies]
+tokio = { version = "1.42.0", features = ["full"] }
+sea-orm = { version = "1.1.0", features = ["sqlx-postgres", "runtime-tokio-native-tls", "macros" ] }
+futures = "0.3.31"
+migration = { path = "migration" }
+dotenv = "0.15.0"
+
